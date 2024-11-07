@@ -28,3 +28,30 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+    computerChoice = computerChoice.toLowerCase();
+    
+    if (humanChoice == "rock" && computerChoice == "paper"){
+        computerScore += 1;
+        return "You lose! Paper beats Rock";
+    } else if (humanChoice == "rock" && computerChoice == "scissors"){
+        humanScore += 1;
+        return "You win! Rock beats Scissors";
+    } else if (humanChoice == "paper" && computerChoice == "rock"){
+        humanScore += 1;
+        return "You win! Paper beats Rock";
+    } else if (humanChoice == "paper" && computerChoice == "scissors"){
+        computerScore += 1;
+        return "You lose! Paper beats Rock";
+    } else if (humanChoice == "scissors" && computerChoice == "rock"){
+        computerScore += 1;
+        return "You lose! Rock beats Scissors";
+    } else if (humanChoice == "scissors" && computerChoice == "paper"){
+        humanScore += 1;
+        return "You win! Scissors beats Paper";
+    } else {
+        return "Draw"
+    }
+}
+
