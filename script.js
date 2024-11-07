@@ -58,9 +58,20 @@ function playRound(humanChoice, computerChoice) {
         //return "Draw"
         return console.log("Draw")
     }
+} // This is the function to play 1 round
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
+        console.log(`You ${humanScore} : ${computerScore} Computer`)
+    }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+playGame();
 
-playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
+//const humanSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
+
+//playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
