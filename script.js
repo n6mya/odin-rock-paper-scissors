@@ -29,29 +29,38 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    computerChoice = computerChoice.toLowerCase();
     
     if (humanChoice == "rock" && computerChoice == "paper"){
         computerScore += 1;
-        return "You lose! Paper beats Rock";
+        //return "You lose! Paper beats Rock";
+        return console.log("You lose! Paper beats Rock");
     } else if (humanChoice == "rock" && computerChoice == "scissors"){
         humanScore += 1;
-        return "You win! Rock beats Scissors";
+        //return "You win! Rock beats Scissors";
+        return console.log("You win! Rock beats Scissors");
     } else if (humanChoice == "paper" && computerChoice == "rock"){
         humanScore += 1;
-        return "You win! Paper beats Rock";
+        //return "You win! Paper beats Rock";
+        return console.log("You win! Paper beats Rock");
     } else if (humanChoice == "paper" && computerChoice == "scissors"){
         computerScore += 1;
-        return "You lose! Paper beats Rock";
+        //return "You lose! Paper beats Rock";
+        return console.log("You lose! Paper beats Rock");
     } else if (humanChoice == "scissors" && computerChoice == "rock"){
         computerScore += 1;
-        return "You lose! Rock beats Scissors";
+        //return "You lose! Rock beats Scissors";
+        return console.log("You lose! Rock beats Scissors");
     } else if (humanChoice == "scissors" && computerChoice == "paper"){
         humanScore += 1;
-        return "You win! Scissors beats Paper";
+        //return "You win! Scissors beats Paper";
+        return console.log("You win! Scissors beats Paper")
     } else {
-        return "Draw"
+        //return "Draw"
+        return console.log("Draw")
     }
 }
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
