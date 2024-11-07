@@ -12,16 +12,21 @@ function getComputerChoice() {
 // console.log(getComputerChoice());
 
 function getHumanChoice() {
-    let choice = prompt("What's your choice (rock, paper, scissors)")
+    let choice = ""
+    while (true) {
+        choice = prompt("What's your choice (rock, paper, scissors)")
+        if (choice == "rock" || choice == "paper" || choice == "scissors") {
+            break;
+        } else {
+            alert("Invalid prompt")
+        }
+    }
     if (choice == "rock") {
         return "rock";
     } else if (choice == "paper") {
         return "paper";
-    } else if (choice == "scissors") {
+    } else{
         return "scissors";
-    } else {
-        alert("Invalid choice");
-        getHumanChoice();
     }
 } // This is to get the user's choice for RPS
 
