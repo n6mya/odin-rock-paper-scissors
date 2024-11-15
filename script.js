@@ -65,18 +65,33 @@ function playRound(humanChoice, computerChoice) {
     }
 } // This is the function to play 1 round
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
-        console.log(`You ${humanScore} : ${computerScore} Computer`)
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+const btn = document.querySelector(".button");
+let gameCounter = 0;
+const results = document.querySelector(".results");
+
+btn.addEventListener('click', (event) => {
+    let target = event.target;
+    let humanChoice = '';
+    let computerChoice = getComputerChoice();
+
+    switch (target.id) {
+        case 'rock':
+            humanChoice = 'rock';
+            //console.log(humanChoice);
+            break;
+        case 'paper':
+            humanChoice = 'paper';
+            //console.log(humanChoice);
+            break;
+        case 'scissors':
+            humanChoice = 'scissors';
+            //console.log(humanChoice);
+            break;
     }
-}
 
-playGame();
-
-//const humanSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
-
-//playRound(humanSelection.toLowerCase(), computerSelection.toLowerCase());
+    results.textContent = playRound(humanChoice, computerChoice);
+    gameCounter++;
+});
