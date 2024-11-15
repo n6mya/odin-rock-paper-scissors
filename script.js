@@ -69,7 +69,6 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 const btn = document.querySelector(".button");
-let gameCounter = 0;
 const results = document.querySelector(".results");
 
 btn.addEventListener('click', (event) => {
@@ -92,6 +91,5 @@ btn.addEventListener('click', (event) => {
             break;
     }
 
-    results.textContent = playRound(humanChoice, computerChoice);
-    gameCounter++;
+    results.textContent = playRound(humanChoice, computerChoice) + ` | You ${humanScore} : ${computerScore} Computer`;
 });
